@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: screenshots-ci-action
       uses: flameddd/screenshots-ci-action@v1.0.0
+    - run: ls
+    - run: pwd
       with:
         url: https://github.com
         devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape,iPad Pro landscape
