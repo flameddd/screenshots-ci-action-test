@@ -1,0 +1,19 @@
+{
+  "name": "screenshots-ci-action-test",
+  "version": "1.0.0",
+  "description": "測試 screenshots-ci-action production 用 aaa test",
+  "main": "index.js",
+  "scripts": {
+    "test": "git add . && git commit -m \"test\" && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flameddd/screenshots-ci-action-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flameddd/screenshots-ci-action-test/issues"
+  },
+  "homepage": "https://github.com/flameddd/screenshots-ci-action-test#readme"
+}
