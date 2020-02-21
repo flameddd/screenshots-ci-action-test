@@ -1,0 +1,25 @@
+name: screenshots-iphone6
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+    - name: Test iphone6 devices
+      uses: flameddd/screenshots-ci-action@v1.0.2
+      with:
+        url: https://www.amazon.co.jp
+        noDesktop: true
+        devices: iPhone 6,iPhone 6 landscape
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-desktop-mobile-screenshots
+        path: screenshots
