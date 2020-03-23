@@ -14,9 +14,9 @@ jobs:
       env:
         CI: 'true'
     - name: Test no url
-      uses: flameddd/screenshots-ci-action@v1.0.3
+      uses: flameddd/screenshots-ci-action@v1.0.4
     - name: Test desktop only
-      uses: flameddd/screenshots-ci-action@v1.0.3
+      uses: flameddd/screenshots-ci-action@v1.0.4
       with:
         url: https://github.com
     - uses: actions/upload-artifact@v1
@@ -24,7 +24,7 @@ jobs:
         name: Download-desktop-screenshots
         path: screenshots
     - name: Test desktop and devices
-      uses: flameddd/screenshots-ci-action@v1.0.3
+      uses: flameddd/screenshots-ci-action@v1.0.4
       with:
         url: https://github.com
         devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape,iPad Pro landscape
