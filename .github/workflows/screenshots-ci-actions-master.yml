@@ -1,0 +1,34 @@
+name: screenshots ci actions
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+    - name: Test no url
+      uses: flameddd/screenshots-ci-action@master
+    - name: Test desktop only
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://github.com
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-desktop-screenshots
+        path: screenshots
+    - name: Test desktop and devices
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://github.com
+        devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape,iPad Pro landscape
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-desktop-mobile-screenshots
+        path: screenshots
