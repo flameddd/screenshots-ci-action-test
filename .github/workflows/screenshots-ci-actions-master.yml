@@ -22,7 +22,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-desktop-screenshots
-        path: screenshots
+        path: screenshots/basic
     - name: Test desktop and devices
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -31,7 +31,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-desktop-mobile-screenshots
-        path: screenshots
+        path: screenshots/basic_mobile
     - name: Test wrong type (default jpeg)
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -42,7 +42,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-mobile-wrong-type-screenshots
-        path: screenshots
+        path: screenshots/default_type
     - name: Test png type
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -53,7 +53,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-mobile-png-screenshots
-        path: screenshots
+        path: screenshots/png_type
     - name: Test fullPage
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -64,4 +64,4 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-mobile-fullPage-screenshots
-        path: screenshots
+        path: screenshots/fullPage
