@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - run: mkdir -p screenshots/basic
+    - run: mkdir -p screenshots/basic_mobile
+    - run: mkdir -p screenshots/default_type
+    - run: mkdir -p screenshots/png_type
+    - run: mkdir -p screenshots/fullPage
+
     - name: install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
@@ -19,7 +26,7 @@ jobs:
       uses: flameddd/screenshots-ci-action@master
       with:
         url: https://github.com
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Download-desktop-screenshots
         path: screenshots/basic
@@ -28,7 +35,7 @@ jobs:
       with:
         url: https://github.com
         devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Download-desktop-mobile-screenshots
         path: screenshots/basic_mobile
@@ -39,7 +46,7 @@ jobs:
         noDesktop: true
         devices: iPhone 6
         type: aaa
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Download-mobile-wrong-type-screenshots
         path: screenshots/default_type
@@ -50,7 +57,7 @@ jobs:
         noDesktop: true
         devices: iPhone 6
         type: png
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Download-mobile-png-screenshots
         path: screenshots/png_type
@@ -61,7 +68,7 @@ jobs:
         noDesktop: true
         devices: iPhone 6
         fullPage: true
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: Download-mobile-fullPage-screenshots
         path: screenshots/fullPage
