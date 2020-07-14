@@ -25,7 +25,6 @@ jobs:
         path: screenshots
         name: Download-desktop-screenshots
     - run: rm ./screenshots/*
-    - run: y
 
     - name: Test desktop and devices
       uses: flameddd/screenshots-ci-action@master
@@ -37,7 +36,6 @@ jobs:
         path: screenshots
         name: Download-desktop-mobile-screenshots
     - run: rm ./screenshots/*
-    - run: y
 
     - name: Test wrong type (default jpeg)
       uses: flameddd/screenshots-ci-action@master
@@ -51,7 +49,6 @@ jobs:
         path: screenshots
         name: Download-mobile-wrong-type-screenshots
     - run: rm ./screenshots/*
-    - run: y
 
     - name: Test png type
       uses: flameddd/screenshots-ci-action@master
@@ -65,7 +62,6 @@ jobs:
         path: screenshots
         name: Download-mobile-png-screenshots
     - run: rm ./screenshots/*
-    - run: y
 
     - name: Test fullPage
       uses: flameddd/screenshots-ci-action@master
@@ -79,4 +75,3 @@ jobs:
         path: screenshots
         name: Download-mobile-fullPage-screenshots
     - run: rm ./screenshots/*
-    - run: y
