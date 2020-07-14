@@ -10,12 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: mkdir -p screenshots/basic
-    - run: mkdir -p screenshots/basic_mobile
-    - run: mkdir -p screenshots/default_type
-    - run: mkdir -p screenshots/png_type
-    - run: mkdir -p screenshots/fullPage
-
     - name: install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
@@ -28,8 +22,11 @@ jobs:
         url: https://github.com
     - uses: actions/upload-artifact@v2
       with:
+        path: screenshots
         name: Download-desktop-screenshots
-        path: screenshots/basic
+    - run: rm ./screenshots/*
+    - run: y
+
     - name: Test desktop and devices
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -37,8 +34,11 @@ jobs:
         devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape
     - uses: actions/upload-artifact@v2
       with:
+        path: screenshots
         name: Download-desktop-mobile-screenshots
-        path: screenshots/basic_mobile
+    - run: rm ./screenshots/*
+    - run: y
+
     - name: Test wrong type (default jpeg)
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -48,8 +48,11 @@ jobs:
         type: aaa
     - uses: actions/upload-artifact@v2
       with:
+        path: screenshots
         name: Download-mobile-wrong-type-screenshots
-        path: screenshots/default_type
+    - run: rm ./screenshots/*
+    - run: y
+
     - name: Test png type
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -59,8 +62,11 @@ jobs:
         type: png
     - uses: actions/upload-artifact@v2
       with:
+        path: screenshots
         name: Download-mobile-png-screenshots
-        path: screenshots/png_type
+    - run: rm ./screenshots/*
+    - run: y
+
     - name: Test fullPage
       uses: flameddd/screenshots-ci-action@master
       with:
@@ -70,5 +76,7 @@ jobs:
         fullPage: true
     - uses: actions/upload-artifact@v2
       with:
+        path: screenshots
         name: Download-mobile-fullPage-screenshots
-        path: screenshots/fullPage
+    - run: rm ./screenshots/*
+    - run: y
