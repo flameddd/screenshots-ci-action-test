@@ -1,4 +1,4 @@
-name: screenshots ci actions
+name: screenshots ci actions master
 on:
   push:
     branches:
@@ -31,4 +31,37 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Download-desktop-mobile-screenshots
+        path: screenshots
+    - name: Test wrong type (default jpeg)
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://github.com
+        noDesktop: true
+        devices: iPhone 6
+        type: aaa
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-mobile-wrong-type-screenshots
+        path: screenshots
+    - name: Test png type
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://github.com
+        noDesktop: true
+        devices: iPhone 6
+        type: png
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-mobile-png-screenshots
+        path: screenshots
+    - name: Test fullPage
+      uses: flameddd/screenshots-ci-action@master
+      with:
+        url: https://github.com
+        noDesktop: true
+        devices: iPhone 6
+        fullPage: true
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Download-mobile-fullPage-screenshots
         path: screenshots
