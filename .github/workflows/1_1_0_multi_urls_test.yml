@@ -7,6 +7,9 @@ on:
 jobs:
   screenshots:
     runs-on: ubuntu-latest
+    env:
+      TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
+      TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: install puppeteer-headful
