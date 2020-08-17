@@ -7,9 +7,6 @@ on:
 jobs:
   screenshots:
     runs-on: ubuntu-latest
-    env:
-      TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
-      TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: install puppeteer-headful
@@ -20,6 +17,9 @@ jobs:
       uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://www.facebook.com/
+      env:
+        TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
+        TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
     - uses: actions/upload-artifact@v2
       with:
         name: Download-desktop-screenshots
