@@ -14,7 +14,7 @@ jobs:
       env:
         CI: 'true'
     - name: screenshots-desktop-facebook
-      uses: flameddd/screenshots-ci-action@v1.1.0
+      uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://www.facebook.com/
     - uses: actions/upload-artifact@v2
@@ -24,7 +24,7 @@ jobs:
     - run: rm ./screenshots/*
 
     - name: screenshots-mobile-facebook
-      uses: flameddd/screenshots-ci-action@v1.1.0
+      uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://m.facebook.com/
         devices: iPhone 6,iPhone 6 landscape
