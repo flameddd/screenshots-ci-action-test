@@ -17,6 +17,7 @@ jobs:
       uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://www.facebook.com/
+        devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape,iPad Pro landscape,Microsoft Lumia 550,Nexus 10 landscape,Nexus 10,Pixel 2,Pixel 2 landscape,Pixel 2 XL
       env:
         TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
         TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
@@ -30,8 +31,11 @@ jobs:
       uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://m.facebook.com/
-        devices: iPhone 6,iPhone 6 landscape
+        devices: iPhone 6
         noDesktop: true
+      env:
+        TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
+        TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
