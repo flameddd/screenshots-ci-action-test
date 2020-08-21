@@ -1,0 +1,24 @@
+name: v1_1_1
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install puppeteer-headful
+      uses: mujo-code/puppeteer-headful@master
+      env:
+        CI: 'true'
+    - name: screenshots-ci-action
+      uses: flameddd/screenshots-ci-action@v1.1.1
+      with:
+        url: https://www.pornhub.com/
+        devices: iPhone 6,iPhone 6 landscape
+        noDesktop: true
+      env:
+        TELE_CHAT_ID: ${{ secrets.TELE_CHAT_ID }}
+        TELE_BOT_TOKEN: ${{ secrets.TELE_BOT_TOKEN }}
