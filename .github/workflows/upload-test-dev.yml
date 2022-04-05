@@ -18,6 +18,7 @@ jobs:
       uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://www.google.com/
+        devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape
         releaseId: 63601424
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
