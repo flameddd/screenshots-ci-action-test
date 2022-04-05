@@ -17,7 +17,7 @@ jobs:
     - name: Test upload image
       uses: flameddd/screenshots-ci-action@dev
       with:
-        url: https://github.com
+        url: https://www.google.com/
         releaseId: 63601424
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
