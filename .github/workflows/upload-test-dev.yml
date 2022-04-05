@@ -1,4 +1,4 @@
-name: screenshots ci actions master
+name: upload-test-dev
 on:
   push:
     branches:
