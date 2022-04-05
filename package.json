@@ -1,6 +1,6 @@
 {
   "name": "screenshots-ci-action-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "測試 screenshots-ci-action production 用 aaa test",
   "main": "index.js",
   "scripts": {
