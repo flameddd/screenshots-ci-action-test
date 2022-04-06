@@ -3,28 +3,24 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened ]
 
-
-
 jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: install puppeteer-headful
       uses: mujo-code/puppeteer-headful@master
       env:
         CI: 'true'
-    - name: Test upload image
+    - name: screenshots-ci-action
       uses: flameddd/screenshots-ci-action@dev
       with:
         url: https://www.google.com/
-        devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape
+        devices: iPhone 6,iPhone 6 landscape
         releaseId: 63601424
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
-        name: Download-desktop-screenshots
-    - run: rm ./screenshots/*
+        name: Download-screenshots
