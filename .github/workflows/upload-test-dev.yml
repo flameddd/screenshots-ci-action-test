@@ -1,8 +1,7 @@
 name: upload-test-dev
 on:
-  push:
-    branches:
-    - master
+  pull_request:
+    types: [ opened, synchronize, reopened ]
 
 jobs:
   screenshots:
