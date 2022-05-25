@@ -19,7 +19,7 @@ jobs:
     - name: Test desktop only
       uses: flameddd/screenshots-ci-action@master
       with:
-        url: https://github.com
+        url: https://twitter.com/
     - uses: actions/upload-artifact@v2
       with:
         path: screenshots
@@ -29,7 +29,7 @@ jobs:
     - name: Test desktop and devices
       uses: flameddd/screenshots-ci-action@master
       with:
-        url: https://github.com
+        url: https://twitter.com/
         devices: iPhone 6,iPhone 6 landscape,Nexus 7,Pad Pro,Galaxy S III landscape
     - uses: actions/upload-artifact@v2
       with:
@@ -40,7 +40,7 @@ jobs:
     - name: Test wrong type (default jpeg)
       uses: flameddd/screenshots-ci-action@master
       with:
-        url: https://github.com
+        url: https://twitter.com/
         noDesktop: true
         devices: iPhone 6
         type: aaa
@@ -53,7 +53,7 @@ jobs:
     - name: Test png type
       uses: flameddd/screenshots-ci-action@master
       with:
-        url: https://github.com
+        url: https://twitter.com/
         noDesktop: true
         devices: iPhone 6
         type: png
@@ -66,7 +66,7 @@ jobs:
     - name: Test fullPage
       uses: flameddd/screenshots-ci-action@master
       with:
-        url: https://github.com
+        url: https://twitter.com/
         noDesktop: true
         devices: iPhone 6
         fullPage: true

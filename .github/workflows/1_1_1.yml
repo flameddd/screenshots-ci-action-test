@@ -16,7 +16,7 @@ jobs:
     - name: screenshots-ci-action
       uses: flameddd/screenshots-ci-action@v1.1.1
       with:
-        url: https://www.pornhub.com/
+        url: https://www.twitter.com/
         devices: iPhone 6,iPhone 6 landscape
         noDesktop: true
       env:
